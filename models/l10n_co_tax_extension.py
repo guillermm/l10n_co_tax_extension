@@ -18,13 +18,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.       #
 ###############################################################################
 
-from openerp import api, fields, models
+from odoo import api, fields, models, _
 
 import pprint
-from openerp.exceptions import UserError, ValidationError
-from openerp.tools.translate import _
-from openerp.tools import float_is_zero, float_compare
-from openerp.tools.misc import formatLang
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools.translate import _
+from odoo.tools import float_is_zero, float_compare
+from odoo.tools.misc import formatLang
 from datetime import datetime
 
 import logging
@@ -35,7 +35,7 @@ class AccountInvoice(models.Model):
     Colombia"""
 
     _description = 'Model to create and save withholding taxes'
-    _name = 'account.invoice'
+    #_name = 'account.invoice'
     _inherit = 'account.invoice'
 
     @api.one
@@ -441,11 +441,11 @@ class AccountInvoice(models.Model):
         return result
 
 class AccountInvoiceLine(models.Model):
-    _name = 'account.invoice.line'
+    #_name = 'account.invoice.line'
     _inherit = 'account.invoice.line'
 
 class AccountTax(models.Model):
-    _name = 'account.tax'
+    #_name = 'account.tax'
     _inherit = 'account.tax'
 
     tax_in_invoice = fields.Boolean(string="Evaluate in invoice", default=False,
@@ -509,7 +509,7 @@ class AccountBaseTax(models.Model):
 
 
 class AccountTaxGroup(models.Model):
-    _name = 'account.tax.group'
+    #_name = 'account.tax.group'
     _inherit = 'account.tax.group'
 
     not_in_invoice = fields.Boolean(string="Don't show in invoice", default=False,
@@ -536,7 +536,7 @@ class AccountFiscalPositionTaxes(models.Model):
             raise ValidationError("Error! cannot have repeated taxes")
 
 class AccountFiscalPosition(models.Model):
-    _name = 'account.fiscal.position'
+    #_name = 'account.fiscal.position'
     _inherit = 'account.fiscal.position'
 
     tax_ids_invoice = fields.One2many('account.fiscal.position.base.tax', 'position_id',
@@ -544,7 +544,7 @@ class AccountFiscalPosition(models.Model):
     
 
 class AccountJournal(models.Model):
-    _name = "account.journal"
+    #_name = "account.journal"
     _inherit = "account.journal"
 
     @api.model
