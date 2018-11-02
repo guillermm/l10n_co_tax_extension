@@ -18,15 +18,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.       #
 ###############################################################################
 
-from openerp import api, fields, models
+from odoo import api, fields, models, _
 
 
-from openerp.exceptions import UserError, ValidationError
-from openerp.tools.translate import _
-from openerp.tools import float_is_zero, float_compare
-from openerp.addons.base.ir.ir_sequence import _update_nogap
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import config, float_compare, float_is_zero
+from odoo.addons.base.ir.ir_sequence import _update_nogap
 from datetime import datetime, timedelta, date
-from openerp.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 
 import pprint
 import logging
@@ -34,7 +33,7 @@ _logger = logging.getLogger(__name__)
 
 
 class IrSequence(models.Model):
-    _name = 'ir.sequence'
+    #_name = 'ir.sequence'
     _inherit = 'ir.sequence'
 
     use_dian_control = fields.Boolean('Use DIAN control resolutions')
