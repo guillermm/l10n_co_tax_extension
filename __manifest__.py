@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# Copyright 2018 Dominic Krimmer, dominic.krimmer@gmail.com, Plastinorte S.A.S
+# Copyright 2018 Luis Alfredo da Silva, luis.adasilvaf@gmail.com,  Plastinorte S.A.S
+# Copyright 2018 https://github.com/exaap, EXA Auto Parts S.A.S
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     'name': 'Colombia - Impuestos',
     'category': 'Localization',
@@ -18,8 +22,7 @@ Colombia Impuestos:
     'depends': [
         'account',
         'sale',
-        'purchase',
-        'l10n_co'
+        'purchase'
     ],
     'data': [
         'security/ir.model.access.csv',
